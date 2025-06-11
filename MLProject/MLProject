@@ -2,7 +2,6 @@ name: recruitment_model_ci
 
 conda_env: conda.yaml
 
-conda_env: conda.yaml
 entry_points:
   main:
     command: "python modelling.py"
