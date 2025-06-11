@@ -1,0 +1,37 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+mlflow_version: 2.19.0
+model_size_bytes: 2744069
+model_uuid: 9e3b0efcaaad4bd0853e993de406b30d
+run_id: 046063041b064195a717aff1eac18e5e
+signature:
+  inputs: '[{"type": "double", "name": "Age", "required": true}, {"type": "long",
+    "name": "Gender", "required": true}, {"type": "long", "name": "EducationLevel",
+    "required": true}, {"type": "double", "name": "ExperienceYears", "required": true},
+    {"type": "double", "name": "PreviousCompanies", "required": true}, {"type": "double",
+    "name": "DistanceFromCompany", "required": true}, {"type": "double", "name": "InterviewScore",
+    "required": true}, {"type": "double", "name": "SkillScore", "required": true},
+    {"type": "double", "name": "PersonalityScore", "required": true}, {"type": "boolean",
+    "name": "AgeGroup_30s", "required": true}, {"type": "boolean", "name": "AgeGroup_40s",
+    "required": true}, {"type": "boolean", "name": "AgeGroup_50s", "required": true},
+    {"type": "boolean", "name": "ExperienceLevel_Mid", "required": true}, {"type":
+    "boolean", "name": "ExperienceLevel_Senior", "required": true}, {"type": "boolean",
+    "name": "ExperienceLevel_Expert", "required": true}, {"type": "boolean", "name":
+    "RecruitmentStrategy_2", "required": true}, {"type": "boolean", "name": "RecruitmentStrategy_3",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2025-06-11 10:24:52.511380'
