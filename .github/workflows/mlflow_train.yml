@@ -2,9 +2,9 @@ name: MLflow Retrain on Push
 
 on:
   push:
-    paths:
-      - 'MLProject/**'
-      - '.github/workflows/**'
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   train-model:
