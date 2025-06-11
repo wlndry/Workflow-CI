@@ -10,24 +10,30 @@ jobs:
   train-model:
     runs-on: ubuntu-latest
 
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12.7
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.7"
+
+      - name: Check Env
+        run: |
+          python --version
+          pip --version
 
       - name: Set up Miniconda
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          auto-activate-base: false
-          environment-file: MLProject/conda.yaml
           activate-environment: mlflow-env
-          python-version: 3.12.7
-
-      - name: Verify environment and mlflow
-        run: |
-          conda info --envs
-          which python
-          which mlflow
-          mlflow --version
+          environment-file: MLProject/conda.yaml
+          auto-activate-base: false
 
       - name: Run MLflow Project
-        run: mlflow run MLProject
+        shell: bash -l {0}
+        run: |
+          export MLFLOW_TRACKING_URI=file:MLProject/mlruns
+          mlflow run MLProject --experiment-name titanic_experiment
