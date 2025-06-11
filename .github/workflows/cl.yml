@@ -1,5 +1,4 @@
-#coba 11
-
+#cek
 name: Train Model CI
 
 on:
@@ -19,9 +18,16 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           auto-activate-base: false
-          python-version: 3.12.7
           environment-file: MLProject/conda.yaml
-          activate-environment: smlenv
+          activate-environment: mlflow-env
+          python-version: 3.12.7
+
+      - name: Verify environment and mlflow
+        run: |
+          conda info --envs
+          which python
+          which mlflow
+          mlflow --version
 
       - name: Run MLflow Project
         run: mlflow run MLProject
