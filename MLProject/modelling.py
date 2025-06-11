@@ -70,4 +70,6 @@ with mlflow.start_run(run_name="RandomForest_Rekrutmen_1"):
 
     # Simpan gambar
     plt.savefig("confusion_matrix.png")
-    mlflow.log_artifact("confusion_matrix.png")
+    mlflow.set_tracking_uri("file:mlruns") 
+
+    mlflow.sklearn.log_model(model, artifact_path="model")
