@@ -33,6 +33,7 @@ y = df["HiringDecision"]
 print("Fitur:", X.columns.tolist())
 print("Jumlah fitur:", X.shape[1])
 
+
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
