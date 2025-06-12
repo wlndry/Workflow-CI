@@ -24,7 +24,7 @@ jobs:
           python --version
           pip --version
 
-      - name: Set up Miniconda
+      - name: Set up Miniconda dan Install dependencies
         uses: conda-incubator/setup-miniconda@v3
         with:
           activate-environment: mlflow-env
